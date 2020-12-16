@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "swapi-films-rater", "swapi-films-rater\swapi-films-rater.csproj", "{5360E722-9F7B-4A53-8DC3-7755C09B730C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5360E722-9F7B-4A53-8DC3-7755C09B730C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5360E722-9F7B-4A53-8DC3-7755C09B730C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5360E722-9F7B-4A53-8DC3-7755C09B730C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5360E722-9F7B-4A53-8DC3-7755C09B730C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D64D23C-E334-4636-9D7D-ACEE48D8682E}
+	EndGlobalSection
+EndGlobal
