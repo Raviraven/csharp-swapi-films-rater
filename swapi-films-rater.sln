@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "swapi-films-rater.DB", "swa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "swapi-films-rater.Models", "swapi-films-rater.Models\swapi-films-rater.Models.csproj", "{344C6842-2909-4F9F-B97F-482B7D9B2336}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F14DCF84-B5CA-4B68-A55F-34016C511939}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
