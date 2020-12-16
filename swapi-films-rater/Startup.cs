@@ -11,6 +11,7 @@ using swapi_films_rater.DB;
 using Microsoft.EntityFrameworkCore;
 using swapi_films_rater.Repository.APIServices;
 using swapi_films_rater.Repository.Helpers;
+using swapi_films_rater.DB.DTO;
 
 namespace swapi_films_rater
 {
@@ -26,13 +27,16 @@ namespace swapi_films_rater
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<SqlContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ConnString")));
+            services.AddDbContext<SqlContext>();
+            //services.AddDbContext<SqlContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ConnString")));
             services.AddControllersWithViews();
 
             services.AddHttpClient("swapi", opt => opt.BaseAddress = new Uri("https://swapi.dev/api"));
 
             services.AddTransient<IFilmsSwapiService, FilmsSwapiService>();
             services.AddTransient<FilmsHelper>();
+
+            services.AddTransient<IFilmRatingsDTO, FilmRatingsDTO>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

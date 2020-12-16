@@ -1,0 +1,122 @@
+﻿@model FilmDetailsViewModel
+
+<section>
+    <p>@Html.LabelFor(model => model.ApiDetails.Episode_id)</p>
+    <p>@Html.DisplayFor(model => model.ApiDetails.Episode_id)</p>
+
+    <p>
+        @Html.LabelFor(model => model.ApiDetails.Title)
+    </p>
+    <p>
+        @Html.DisplayFor(model => model.ApiDetails.Title)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.ApiDetails.Characters)
+    </p>
+    <p>
+        @Html.
+        @Html.DisplayFor(model => model.ApiDetails.Characters)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.ApiDetails.Created)
+    </p>
+    <p>
+        @Html.DisplayFor(model => model.ApiDetails.Created)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.ApiDetails.Director)
+    </p>
+    <p>
+        @Html.DisplayFor(model => model.ApiDetails.Director)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.ApiDetails.Edited)
+    </p>
+    <p>
+        @Html.DisplayFor(model => model.ApiDetails.Edited)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.ApiDetails.Opening_crawl)
+    </p>
+    <p>
+        @Html.DisplayFor(model => model.ApiDetails.Opening_crawl)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.ApiDetails.Planets)
+    </p>
+    <p>
+        @Html.DisplayFor(model => model.ApiDetails.Planets)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.ApiDetails.Producer)
+    </p>
+    <p>
+        @Html.DisplayFor(model => model.ApiDetails.Producer)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.ApiDetails.Release_date)
+    </p>
+    <p>
+        @Html.DisplayFor(model => model.ApiDetails.Release_date)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.ApiDetails.Species)
+    </p>
+    <p>
+        @Html.DisplayFor(model => model.ApiDetails.Species)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.ApiDetails.Starships)
+    </p>
+    <p>
+        @Html.DisplayFor(model => model.ApiDetails.Starships)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.ApiDetails.Url)
+    </p>
+    <p>
+        @Html.DisplayFor(model => model.ApiDetails.Url)
+    </p>
+
+    <p>
+        @Html.LabelFor(model => model.ApiDetails.Vehicles)
+    </p>
+    <p>
+        @Html.DisplayFor(model => model.ApiDetails.Vehicles)
+    </p>
+
+</section>
+
+<section>
+    @using(Html.BeginForm("AddRating","Films", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.FilmRating.Rating)
+            <div class="">
+                @Html.EditorFor(model => model.FilmRating.Rating)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FilmRating.Username)
+            <div class="">
+                @Html.EditorFor(model => model.FilmRating.Username)
+            </div>
+        </div>
+
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    }
+</section>

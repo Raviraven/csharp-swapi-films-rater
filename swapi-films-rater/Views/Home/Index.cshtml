@@ -29,7 +29,7 @@
                     <td>@film.Key</td>
                     <td>@film.Value</td>
                     <td>
-                        @Html.ActionLink("Details", "")
+                        @Html.ActionLink("Details", "Index", "Films", new { Id = film.Key })
                     </td>
                 </tr>
             }
