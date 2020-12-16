@@ -9,5 +9,6 @@ namespace swapi_films_rater.Repository.APIServices
     public interface IFilmsSwapiService
     {
         Task<FilmsContainer> Get();
+        Task<Film> Get(int Id);
     }
 }

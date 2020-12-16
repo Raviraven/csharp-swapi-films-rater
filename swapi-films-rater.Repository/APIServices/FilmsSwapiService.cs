@@ -43,5 +43,32 @@ namespace swapi_films_rater.Repository.APIServices
                 throw e;
             }
         }
+
+        public async Task<Film> Get(int Id)
+        {
+            try
+            {
+                using (var client = _httpClientFactory.CreateClient("swapi"))
+                {
+                    string path = $"{client.BaseAddress.AbsoluteUri}/films/{Id}/";
+                    using (var response = await client.GetAsync(path))
+                    {
+                        if (response.IsSuccessStatusCode)
+                        {
+                            using (var stream = await response.Content.ReadAsStreamAsync())
+                            {
+                                return await System.Text.Json.JsonSerializer.DeserializeAsync<Film>
+                                    (stream, new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true, IgnoreNullValues = true });
+                            }
+                        }
+                        else return null;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }
