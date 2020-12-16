@@ -1,3 +1,7 @@
 swapi-films-rater/bin/
 swapi-films-rater/obj/
 .vs/
+swapi-films-rater.DB/bin/
+swapi-films-rater.DB/obj/
+swapi-films-rater.Models/bin/
+swapi-films-rater.Models/obj/
