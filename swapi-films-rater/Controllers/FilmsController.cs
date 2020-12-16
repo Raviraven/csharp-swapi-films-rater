@@ -13,15 +13,14 @@ namespace swapi_films_rater.Controllers
     public class FilmsController : Controller
     {
         private IFilmsSwapiService _filmsSwapiService { get; set; }
-        private IFilmRatingsDTO _filmRatingsDTO { get; set; }
+        private IFilmRatingsDAL _filmRatingsDTO { get; set; }
 
-        public FilmsController(IFilmsSwapiService filmsSwapiService, IFilmRatingsDTO filmRatingsDTO)
+        public FilmsController(IFilmsSwapiService filmsSwapiService, IFilmRatingsDAL filmRatingsDTO)
         {
             _filmsSwapiService = filmsSwapiService;
             _filmRatingsDTO = filmRatingsDTO;
         }
 
-        [Route("{Id}")]
         public async Task<IActionResult> Index(int Id)
         {
             var filmDetails = await _filmsSwapiService.Get(Id);
@@ -35,9 +34,9 @@ namespace swapi_films_rater.Controllers
         }
 
         [HttpPost]
-        public void AddRating(FilmRating filmRating)
+        public async Task AddRating(FilmRating filmRating)
         {
-            _filmRatingsDTO.Add(filmRating);
+            await _filmRatingsDTO.Add(filmRating);
         }
     }
 }

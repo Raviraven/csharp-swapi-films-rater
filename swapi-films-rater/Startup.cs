@@ -27,8 +27,8 @@ namespace swapi_films_rater
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<SqlContext>();
-            //services.AddDbContext<SqlContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ConnString")));
+            //services.AddDbContext<SqlContext>();
+            services.AddDbContext<SqlContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ConnString")));
             services.AddControllersWithViews();
 
             services.AddHttpClient("swapi", opt => opt.BaseAddress = new Uri("https://swapi.dev/api"));
@@ -36,12 +36,14 @@ namespace swapi_films_rater
             services.AddTransient<IFilmsSwapiService, FilmsSwapiService>();
             services.AddTransient<FilmsHelper>();
 
-            services.AddTransient<IFilmRatingsDTO, FilmRatingsDTO>();
+            services.AddTransient<IFilmRatingsDAL, FilmRatingsDAL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, SqlContext sqlContext)
         {
+            sqlContext.Database.Migrate();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

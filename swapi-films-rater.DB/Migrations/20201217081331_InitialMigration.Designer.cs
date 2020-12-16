@@ -9,7 +9,7 @@ using swapi_films_rater.DB;
 namespace swapi_films_rater.DB.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    [Migration("20201216204520_InitialMigration")]
+    [Migration("20201217081331_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
