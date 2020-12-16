@@ -9,6 +9,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using swapi_films_rater.DB;
 using Microsoft.EntityFrameworkCore;
+using swapi_films_rater.Repository.APIServices;
+using swapi_films_rater.Repository.Helpers;
 
 namespace swapi_films_rater
 {
@@ -26,6 +28,11 @@ namespace swapi_films_rater
         {
             services.AddDbContext<SqlContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ConnString")));
             services.AddControllersWithViews();
+
+            services.AddHttpClient("swapi", opt => opt.BaseAddress = new Uri("https://swapi.dev/api"));
+
+            services.AddTransient<IFilmsSwapiService, FilmsSwapiService>();
+            services.AddTransient<FilmsHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
