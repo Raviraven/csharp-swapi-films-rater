@@ -1,8 +1,38 @@
-﻿@{
+﻿@model Dictionary<int, string>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    <p>Choose your film :)</p>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Episode
+                </th>
+                <th>
+                    Title
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var film in Model)
+            {
+                <tr>
+                    <td>@film.Key</td>
+                    <td>@film.Value</td>
+                    <td>
+                        @Html.ActionLink("Details", "")
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>

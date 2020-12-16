@@ -16,6 +16,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\swapi-films-rater.DB\swapi-films-rater.DB.csproj" />
+    <ProjectReference Include="..\swapi-films-rater.Repository\swapi-films-rater.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Film\" />
   </ItemGroup>
 
 </Project>
