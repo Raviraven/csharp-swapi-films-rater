@@ -12,6 +12,7 @@ namespace swapi_films_rater.Models.ViewModels
         public int EpisodeId { get; set; }
         public string MovieName { get; set; }
         [Required]
+        [Range(0, 10)]
         public int Rate { get; set; }
         [Required]
         public string Username { get; set; }
