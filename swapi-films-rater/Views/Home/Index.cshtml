@@ -29,7 +29,7 @@
                     <td>@film.EpisodeId</td>
                     <td>@film.Title</td>
                     <td>
-                        @Html.ActionLink("Details", "Details", "Films", new { Id = film.Id })
+                        @Html.ActionLink("Details", "Details", "Films", new { Id = film.UrlId })
                     </td>
                 </tr>
             }

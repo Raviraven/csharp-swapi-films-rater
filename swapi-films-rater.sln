@@ -3,15 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "swapi-films-rater", "swapi-films-rater\swapi-films-rater.csproj", "{5360E722-9F7B-4A53-8DC3-7755C09B730C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "swapi-films-rater", "swapi-films-rater\swapi-films-rater.csproj", "{5360E722-9F7B-4A53-8DC3-7755C09B730C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "swapi-films-rater.DB", "swapi-films-rater.DB\swapi-films-rater.DB.csproj", "{0EF6514A-E34A-4E25-A80D-6A7A276311E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "swapi-films-rater.DB", "swapi-films-rater.DB\swapi-films-rater.DB.csproj", "{0EF6514A-E34A-4E25-A80D-6A7A276311E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "swapi-films-rater.Models", "swapi-films-rater.Models\swapi-films-rater.Models.csproj", "{344C6842-2909-4F9F-B97F-482B7D9B2336}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "swapi-films-rater.Models", "swapi-films-rater.Models\swapi-films-rater.Models.csproj", "{344C6842-2909-4F9F-B97F-482B7D9B2336}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F14DCF84-B5CA-4B68-A55F-34016C511939}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "swapi-films-rater.Repository", "swapi-films-rater.Repository\swapi-films-rater.Repository.csproj", "{DFB429E8-5B7D-4C32-BD6D-404672A63DA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "swapi-films-rater.Repository", "swapi-films-rater.Repository\swapi-films-rater.Repository.csproj", "{DFB429E8-5B7D-4C32-BD6D-404672A63DA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "swapi-films-rater.Repository.Tests", "swapi-films-rater.Repository.Tests\swapi-films-rater.Repository.Tests.csproj", "{E640D741-0B2B-40FF-9AC1-5A54A8EB4C98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{557C27B2-D316-40D8-876B-7C0DC411BCB3}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,9 +42,16 @@ Global
 		{DFB429E8-5B7D-4C32-BD6D-404672A63DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFB429E8-5B7D-4C32-BD6D-404672A63DA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFB429E8-5B7D-4C32-BD6D-404672A63DA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E640D741-0B2B-40FF-9AC1-5A54A8EB4C98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E640D741-0B2B-40FF-9AC1-5A54A8EB4C98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E640D741-0B2B-40FF-9AC1-5A54A8EB4C98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E640D741-0B2B-40FF-9AC1-5A54A8EB4C98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E640D741-0B2B-40FF-9AC1-5A54A8EB4C98} = {F14DCF84-B5CA-4B68-A55F-34016C511939}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D64D23C-E334-4636-9D7D-ACEE48D8682E}

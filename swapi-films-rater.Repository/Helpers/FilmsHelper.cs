@@ -11,27 +11,32 @@ namespace swapi_films_rater.Repository.Helpers
         public List<FilmListViewModel> GetTitlesAndEpisodes(Film[] films)
         {
             var dropDownList = new List<FilmListViewModel>();
+            if (films == null) return dropDownList;
             foreach (var item in films)
             {
-                dropDownList.Add(new FilmListViewModel
+                if (item != null)
                 {
-                    Id = convertStringIdToInt(getLastUrlParam(item.Url)),
-                    EpisodeId = item.Episode_id,
-                    Title = item.Title
-                });
+                    dropDownList.Add(new FilmListViewModel
+                    {
+                        UrlId = convertStringIdToInt(getIdParamFromUrl(item.Url)),
+                        EpisodeId = item.Episode_id,
+                        Title = item.Title
+                    });
+                }
             }
             return dropDownList;
         }
 
-        private int convertStringIdToInt(string Id)
+        protected int convertStringIdToInt(string Id)
         {
             int result;
             int.TryParse(Id, out result);
             return result;
         }
 
-        private string getLastUrlParam(string url)
+        protected string getIdParamFromUrl(string url)
         {
+            if (string.IsNullOrEmpty(url)) return "";
             var urlParts = url.Split('/');
             return urlParts[urlParts.Length - 2];
         }
