@@ -11,7 +11,9 @@ using swapi_films_rater.DB;
 using Microsoft.EntityFrameworkCore;
 using swapi_films_rater.Repository.APIServices;
 using swapi_films_rater.Repository.Helpers;
-using swapi_films_rater.DB.DTO;
+using swapi_films_rater.DB.DAL;
+using AutoMapper;
+using swapi_films_rater.Repository.DALServices;
 
 namespace swapi_films_rater
 {
@@ -30,6 +32,8 @@ namespace swapi_films_rater
             //services.AddDbContext<SqlContext>();
             services.AddDbContext<SqlContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("ConnString")));
             services.AddControllersWithViews();
+            services.AddAutoMapper(typeof(Startup));
+
 
             services.AddHttpClient("swapi", opt => opt.BaseAddress = new Uri("https://swapi.dev/api"));
 
@@ -37,6 +41,8 @@ namespace swapi_films_rater
             services.AddTransient<FilmsHelper>();
 
             services.AddTransient<IFilmRatingsDAL, FilmRatingsDAL>();
+
+            services.AddTransient<IFilmRatingsDalService, FilmRatingsDalService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

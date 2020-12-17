@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace swapi_films_rater.DB.DTO
+namespace swapi_films_rater.DB.DAL
 {
     public class FilmRatingsDAL : IFilmRatingsDAL
     {
