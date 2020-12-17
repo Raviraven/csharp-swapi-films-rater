@@ -6,7 +6,7 @@ using swapi_films_rater.Models.ViewModels;
 
 namespace swapi_films_rater.Repository.Helpers
 {
-    public class FilmsHelper
+    public class FilmsHelper : IFilmsHelper
     {
         public List<FilmListViewModel> GetTitlesAndEpisodes(Film[] films)
         {

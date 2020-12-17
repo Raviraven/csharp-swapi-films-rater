@@ -16,8 +16,7 @@ namespace swapi_films_rater.Controllers
         private readonly IFilmsSwapiService _filmsSwapiService;
         private readonly IFilmRatingsDalService _filmRatingsDalService;
 
-        public FilmsController(IFilmsSwapiService filmsSwapiService, IFilmRatingsDalService filmRatingsDalService
-            )
+        public FilmsController(IFilmsSwapiService filmsSwapiService, IFilmRatingsDalService filmRatingsDalService)
         {
             _filmsSwapiService = filmsSwapiService;
             _filmRatingsDalService = filmRatingsDalService;

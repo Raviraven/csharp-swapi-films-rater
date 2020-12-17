@@ -10,3 +10,5 @@ swapi-films-rater.Models/obj/
 /swapi-films-rater/swapi-films-rater.csproj.user
 /swapi-films-rater.Repository.Tests/bin/
 /swapi-films-rater.Repository.Tests/obj/
+/swapi-films-rater.Tests/bin
+/swapi-films-rater.Tests/obj

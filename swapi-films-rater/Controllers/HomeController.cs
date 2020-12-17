@@ -15,10 +15,10 @@ namespace swapi_films_rater.Controllers
     public class HomeController : Controller
     {
         private readonly IFilmsSwapiService _filmsSwapiService;
-        private readonly FilmsHelper _filmsService;
+        private readonly IFilmsHelper _filmsService;
 
         public HomeController(IFilmsSwapiService filmsSwapiService,
-            FilmsHelper filmsService)
+            IFilmsHelper filmsService)
         {
             _filmsSwapiService = filmsSwapiService;
             _filmsService = filmsService;

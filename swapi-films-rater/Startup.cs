@@ -38,7 +38,7 @@ namespace swapi_films_rater
             services.AddHttpClient("swapi", opt => opt.BaseAddress = new Uri("https://swapi.dev/api"));
 
             services.AddTransient<IFilmsSwapiService, FilmsSwapiService>();
-            services.AddTransient<FilmsHelper>();
+            services.AddTransient<IFilmsHelper, FilmsHelper>();
 
             services.AddTransient<IFilmRatingsDAL, FilmRatingsDAL>();
 

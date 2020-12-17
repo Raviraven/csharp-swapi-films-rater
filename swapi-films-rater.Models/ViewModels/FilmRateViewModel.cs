@@ -16,5 +16,23 @@ namespace swapi_films_rater.Models.ViewModels
         public int? Rate { get; set; }
         [Required]
         public string Username { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+
+            var parsedObj = (FilmRateViewModel)obj;
+
+            if (parsedObj == null) return false;
+
+            if (this.UrlId != parsedObj.UrlId
+                || this.EpisodeId != parsedObj.EpisodeId
+                || this.Title != parsedObj.Title
+                || this.Rate != parsedObj.Rate
+                || this.Username != parsedObj.Username)
+                return false;
+
+            return true;
+        }
     }
 }

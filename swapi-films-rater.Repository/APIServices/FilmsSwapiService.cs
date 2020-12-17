@@ -33,7 +33,10 @@ namespace swapi_films_rater.Repository.APIServices
                                     (stream, new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true, IgnoreNullValues = true });
                             }
                         }
-                        else return null;
+                        else
+                        {
+                            return new FilmsContainer();
+                        }
                     }
                 }
             }
@@ -65,7 +68,10 @@ namespace swapi_films_rater.Repository.APIServices
                                     (stream, new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true, IgnoreNullValues = true });
                             }
                         }
-                        else return null;
+                        else
+                        {
+                            return new Film();
+                        }
                     }
                 }
             }
