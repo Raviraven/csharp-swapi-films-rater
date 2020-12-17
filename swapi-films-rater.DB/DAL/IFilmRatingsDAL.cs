@@ -8,9 +8,7 @@ namespace swapi_films_rater.DB.DAL
 {
     public interface IFilmRatingsDAL
     {
-        Task<List<FilmRating>> Get();
-        Task<List<FilmRating>> GetByFilmId(int filmId);
-
+        Task<List<FilmRating>> GetByEpisodeId(int filmId);
         Task<FilmRating> Add(FilmRating filmRating);
     }
 }

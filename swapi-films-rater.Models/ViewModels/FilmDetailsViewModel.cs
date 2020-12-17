@@ -8,8 +8,8 @@ namespace swapi_films_rater.Models.ViewModels
 {
     public class FilmDetailsViewModel
     {
+        public int UrlId { get; set; }
         public Film ApiDetails { get; set; }
-        public FilmRateViewModel FilmRating { get; set; }
         public List<FilmRateViewModel> FilmRatings { get; set; }
     }
 

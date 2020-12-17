@@ -10,6 +10,7 @@ namespace swapi_films_rater.Repository.DALServices
     public interface IFilmRatingsDalService
     {
         Task<FilmRating> Get();
+        Task<List<FilmRateViewModel>> GetByEpisodeId(int episodeId);
         Task<FilmRateViewModel> Add(FilmRateViewModel filmRate);
     }
 }

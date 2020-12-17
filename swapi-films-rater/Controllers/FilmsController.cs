@@ -28,26 +28,36 @@ namespace swapi_films_rater.Controllers
         public async Task<IActionResult> Details(int Id)
         {
             var filmDetails = await _filmsSwapiService.Get(Id);
+            var filmRatings = await _filmRatingsDalService.GetByEpisodeId(filmDetails.Episode_id);
 
             var filmDetailsViewModel = new FilmDetailsViewModel()
             {
-                ApiDetails = filmDetails
+                UrlId = Id,
+                ApiDetails = filmDetails,
+                FilmRatings = filmRatings
             };
 
             return View(filmDetailsViewModel);
         }
 
-        public IActionResult Rate(int Id, string title)
+        public IActionResult Rate(int urlId, int episodeId, string title)
         {
-            var model = new FilmRateViewModel { EpisodeId = Id, MovieName = title };
+            var model = new FilmRateViewModel { UrlId = urlId, EpisodeId = episodeId, MovieName = title };
             return View(model);
         }
 
         [HttpPost]
         public async Task<IActionResult> Rate(FilmRateViewModel filmRate)
         {
-            await _filmRatingsDalService.Add(filmRate); //_filmRatingsDAL.Add(filmRate);
-            return RedirectToAction("Details", new { Id= filmRate.EpisodeId });
+            if (ModelState.IsValid)
+            {
+                await _filmRatingsDalService.Add(filmRate); //_filmRatingsDAL.Add(filmRate);
+                return RedirectToAction("Details", new { Id = filmRate.UrlId });
+            }
+            else
+            {
+                return View(filmRate);
+            }
         }
     }
 }

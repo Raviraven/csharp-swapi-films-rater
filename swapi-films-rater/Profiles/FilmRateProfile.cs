@@ -11,7 +11,8 @@ namespace swapi_films_rater.Repository.Profiles
     {
         public FilmRateProfile()
         {
-            this.CreateMap<FilmRating, FilmRateViewModel>();
+            this.CreateMap<FilmRating, FilmRateViewModel>()
+                .ForMember(dest => dest.Rate, opt => opt.MapFrom(src => src.Rating));
             
             this.CreateMap<FilmRateViewModel, FilmRating>()
                 .ForMember(dest=>dest.Rating, opt => opt.MapFrom(src => src.Rate))

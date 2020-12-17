@@ -8,6 +8,7 @@ namespace swapi_films_rater.Models.ViewModels
 {
     public class FilmRateViewModel
     {
+        public int UrlId { get; set; }
         public int EpisodeId { get; set; }
         public string MovieName { get; set; }
         [Required]

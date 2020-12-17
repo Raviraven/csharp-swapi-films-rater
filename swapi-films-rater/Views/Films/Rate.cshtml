@@ -5,6 +5,10 @@
 
     @using (Html.BeginForm("Rate", "Films", FormMethod.Post))
     {
+
+        @Html.ValidationSummary(false, "", new { @class = "text-danger"})
+
+        @Html.HiddenFor(model => model.UrlId)
         @Html.HiddenFor(model => model.EpisodeId)
         @Html.HiddenFor(model => model.MovieName)
 

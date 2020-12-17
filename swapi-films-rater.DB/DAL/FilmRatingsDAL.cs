@@ -31,12 +31,7 @@ namespace swapi_films_rater.DB.DAL
             }
         }
 
-        public Task<List<FilmRating>> Get()
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<List<FilmRating>> GetByFilmId(int filmId)
+        public async Task<List<FilmRating>> GetByEpisodeId(int filmId)
         {
                 return await _context.FilmsRatings
                     .Where(n => n.EpisodeId == filmId)

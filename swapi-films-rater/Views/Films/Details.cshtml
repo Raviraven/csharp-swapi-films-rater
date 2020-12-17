@@ -96,5 +96,9 @@
         @Html.DisplayFor(model => model.ApiDetails.Vehicles)
     </p>
 
-    @Html.ActionLink("Rate movie", "Rate", "Films", new { Id = Model.ApiDetails.Episode_id, Title = Model.ApiDetails.Title })
+    @Html.ActionLink("Rate movie", "Rate", "Films", 
+        new { urlId = Model.UrlId, episodeId = Model.ApiDetails.Episode_id, Title = Model.ApiDetails.Title })
 </section>
+
+<partial name="_UserRatings" model="Model.FilmRatings"  />
+@*@Html.Partial("_UserRatings", Model.FilmRatings)*@

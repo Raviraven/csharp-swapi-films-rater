@@ -1,0 +1,15 @@
+﻿@model List<swapi_films_rater.Models.ViewModels.FilmRateViewModel>
+
+<section>
+    <h3>Users ratings</h3>
+
+    <hr />
+
+    @foreach (var rating in Model)
+    {
+        <div>
+            <p> @rating.Username</p>
+            <p> @rating.Rate</p>
+        </div>
+    }
+</section>
