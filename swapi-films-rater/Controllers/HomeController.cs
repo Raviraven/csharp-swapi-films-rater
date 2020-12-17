@@ -15,7 +15,7 @@ namespace swapi_films_rater.Controllers
     public class HomeController : Controller
     {
         private IFilmsSwapiService _filmsSwapiService { get; set; }
-        private FilmsHelper FilmsService { get; set; }
+        private FilmsHelper _filmsService { get; set; }
 
         private readonly ILogger<HomeController> _logger;
 
@@ -24,15 +24,15 @@ namespace swapi_films_rater.Controllers
         {
             _logger = logger;
             _filmsSwapiService = filmsSwapiService;
-            FilmsService = filmsService;
+            _filmsService = filmsService;
         }
 
         public async Task<IActionResult> Index()
         {
             var filmsContainer = await _filmsSwapiService.Get();
-            var dropDownList = FilmsService.GetTitlesAndEpisodes(filmsContainer.Results);
+            var filmsList = _filmsService.GetTitlesAndEpisodes(filmsContainer.Results);
 
-            return View(dropDownList);
+            return View(filmsList);
         }
 
         public IActionResult Privacy()

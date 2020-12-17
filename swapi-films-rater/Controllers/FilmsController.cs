@@ -7,21 +7,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using swapi_films_rater.DB.DTO;
+using swapi_films_rater.Models.ViewModels;
 
 namespace swapi_films_rater.Controllers
 {
     public class FilmsController : Controller
     {
         private IFilmsSwapiService _filmsSwapiService { get; set; }
-        private IFilmRatingsDAL _filmRatingsDTO { get; set; }
+        private IFilmRatingsDAL _filmRatingsDAL { get; set; }
 
-        public FilmsController(IFilmsSwapiService filmsSwapiService, IFilmRatingsDAL filmRatingsDTO)
+        public FilmsController(IFilmsSwapiService filmsSwapiService, IFilmRatingsDAL filmRatingsDAL)
         {
             _filmsSwapiService = filmsSwapiService;
-            _filmRatingsDTO = filmRatingsDTO;
+            _filmRatingsDAL = filmRatingsDAL;
         }
 
-        public async Task<IActionResult> Index(int Id)
+        public async Task<IActionResult> Details(int Id)
         {
             var filmDetails = await _filmsSwapiService.Get(Id);
 
@@ -33,10 +34,16 @@ namespace swapi_films_rater.Controllers
             return View(filmDetailsViewModel);
         }
 
-        [HttpPost]
-        public async Task AddRating(FilmRating filmRating)
+        public IActionResult Rate(int Id, string title)
         {
-            await _filmRatingsDTO.Add(filmRating);
+            var model = new FilmRateViewModel { EpisodeId = Id, MovieName = title };
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task Rate(FilmRateViewModel filmRate)
+        {
+            //await _filmRatingsDTO.Add(filmRating);
         }
     }
 }

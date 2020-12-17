@@ -46,12 +46,17 @@ namespace swapi_films_rater.Repository.APIServices
 
         public async Task<Film> Get(int Id)
         {
+            string url = $"https://swapi.dev/api/films/{Id}/";
+            return await GetByUrl(url);
+        }
+
+        public async Task<Film> GetByUrl(string url)
+        {
             try
             {
-                using (var client = _httpClientFactory.CreateClient("swapi"))
+                using (var client = _httpClientFactory.CreateClient())
                 {
-                    string path = $"{client.BaseAddress.AbsoluteUri}/films/{Id}/";
-                    using (var response = await client.GetAsync(path))
+                    using (var response = await client.GetAsync(url))
                     {
                         if (response.IsSuccessStatusCode)
                         {

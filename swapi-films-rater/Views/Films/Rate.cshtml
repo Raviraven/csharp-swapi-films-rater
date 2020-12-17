@@ -1,0 +1,26 @@
+﻿@model swapi_films_rater.Models.ViewModels.FilmRateViewModel
+
+<section>
+    <h3>@Model.MovieName</h3>
+
+    @using (Html.BeginForm("Rate", "Films", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.Rate)
+            <div class="">
+                @Html.EditorFor(model => model.Rate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Username)
+            <div class="">
+                @Html.EditorFor(model => model.Username)
+            </div>
+        </div>
+
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    }
+</section>

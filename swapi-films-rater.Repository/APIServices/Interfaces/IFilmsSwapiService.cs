@@ -10,5 +10,6 @@ namespace swapi_films_rater.Repository.APIServices
     {
         Task<FilmsContainer> Get();
         Task<Film> Get(int Id);
+        Task<Film> GetByUrl(string url);
     }
 }

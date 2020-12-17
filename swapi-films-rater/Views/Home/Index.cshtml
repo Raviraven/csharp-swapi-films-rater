@@ -1,4 +1,4 @@
-﻿@model Dictionary<int, string>
+﻿@model List<swapi_films_rater.Models.ViewModels.FilmListViewModel>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -26,10 +26,10 @@
             @foreach (var film in Model)
             {
                 <tr>
-                    <td>@film.Key</td>
-                    <td>@film.Value</td>
+                    <td>@film.EpisodeId</td>
+                    <td>@film.Title</td>
                     <td>
-                        @Html.ActionLink("Details", "Index", "Films", new { Id = film.Key })
+                        @Html.ActionLink("Details", "Details", "Films", new { Id = film.Id })
                     </td>
                 </tr>
             }
