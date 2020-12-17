@@ -15,27 +15,8 @@ namespace swapi_films_rater
     {
         public static void Main(string[] args)
         {
-            var host = CreateHostBuilder(args).Build();//.Run();
-            //CreateDbIfNotExists(host);
-            host.Run();
+            CreateHostBuilder(args).Build().Run();
         }
-
-        //private static void CreateDbIfNotExists(IHost host)
-        //{
-        //    using (var scope = host.Services.CreateScope())
-        //    {
-        //        var services = scope.ServiceProvider;
-        //        try
-        //        {
-        //            var context = services.GetRequiredService<SqlContext>();
-        //            DbSeed.Seed(context);
-        //        }
-        //        catch(Exception e)
-        //        {
-        //            throw e;
-        //        }
-        //    }
-        //}
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)

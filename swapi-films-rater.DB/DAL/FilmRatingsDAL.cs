@@ -17,7 +17,7 @@ namespace swapi_films_rater.DB.DAL
             _context = context;
         }
             
-        public async Task<FilmRating> Add(FilmRating filmRating)
+        public async Task<FilmRate> Add(FilmRate filmRating)
         {
             try
             {
@@ -31,7 +31,7 @@ namespace swapi_films_rater.DB.DAL
             }
         }
 
-        public async Task<List<FilmRating>> GetByEpisodeId(int filmId)
+        public async Task<List<FilmRate>> GetByEpisodeId(int filmId)
         {
                 return await _context.FilmsRatings
                     .Where(n => n.EpisodeId == filmId)

@@ -13,15 +13,13 @@ namespace swapi_films_rater.Controllers
 {
     public class FilmsController : Controller
     {
-        private IFilmsSwapiService _filmsSwapiService { get; set; }
-        //private IFilmRatingsDAL _filmRatingsDAL { get; set; }
+        private readonly IFilmsSwapiService _filmsSwapiService;
         private readonly IFilmRatingsDalService _filmRatingsDalService;
 
         public FilmsController(IFilmsSwapiService filmsSwapiService, IFilmRatingsDalService filmRatingsDalService
             )
         {
             _filmsSwapiService = filmsSwapiService;
-            //_filmRatingsDAL = filmRatingsDAL;
             _filmRatingsDalService = filmRatingsDalService;
         }
 
@@ -51,7 +49,7 @@ namespace swapi_films_rater.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _filmRatingsDalService.Add(filmRate); //_filmRatingsDAL.Add(filmRate);
+                await _filmRatingsDalService.Add(filmRate);
                 return RedirectToAction("Details", new { Id = filmRate.UrlId });
             }
             else

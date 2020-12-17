@@ -28,7 +28,7 @@ namespace swapi_films_rater.DB.Migrations
                     b.Property<int>("EpisodeId")
                         .HasColumnType("int");
 
-                    b.Property<string>("MovieName")
+                    b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Rating")

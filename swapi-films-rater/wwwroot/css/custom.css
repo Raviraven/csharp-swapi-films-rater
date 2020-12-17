@@ -1,9 +1,15 @@
-﻿.details > a {
+﻿.button__custom {
     background: #dfd7d7;
     padding: 0.5rem;
     border-radius: 1rem;
     text-decoration: none;
     color: black;
+    border: none;
+}
+
+.button__custom:hover {
+    text-decoration: none;
+    color: lightblue;
 }
 
 .details__content {
@@ -33,20 +39,6 @@
 .index__table > tr, td, th {
     height: 2.5rem;
     text-align: center;
-}
-
-.rate__button {
-    background: #dfd7d7;
-    padding: 0.5rem;
-    border-radius: 1rem;
-    text-decoration: none;
-    color: black;
-    border: none;
-}
-
-.rate__button:hover {
-    text-decoration: none;
-    color: lightblue;
 }
 
 .ratings {

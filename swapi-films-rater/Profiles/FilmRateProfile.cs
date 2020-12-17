@@ -11,12 +11,12 @@ namespace swapi_films_rater.Repository.Profiles
     {
         public FilmRateProfile()
         {
-            this.CreateMap<FilmRating, FilmRateViewModel>()
+            this.CreateMap<FilmRate, FilmRateViewModel>()
                 .ForMember(dest => dest.Rate, opt => opt.MapFrom(src => src.Rating));
             
-            this.CreateMap<FilmRateViewModel, FilmRating>()
+            this.CreateMap<FilmRateViewModel, FilmRate>()
                 .ForMember(dest=>dest.Rating, opt => opt.MapFrom(src => src.Rate))
-                .ForMember(dest => dest.MovieName, opt => opt.MapFrom(src => src.Title))
+                .ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.Title))
                 .ForMember(dest => dest.EpisodeId, opt => opt.MapFrom(src => src.EpisodeId))
                 .ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.Username));
         }

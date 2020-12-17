@@ -5,7 +5,7 @@
 }
 
 <div class="index">
-    <h2 class="index__header">Choose your film :)</h2>
+    <h2 class="index__header">Hello, choose film and view the details 😉</h2>
     <table class="index__table">
         <thead>
             <tr>
@@ -27,7 +27,7 @@
                     <td>@film.EpisodeId</td>
                     <td>@film.Title</td>
                     <td>
-                        <a asp-controller="Films" asp-action="Details" asp-all-route-data="routeData" >Details</a>
+                        <a asp-controller="Films" asp-action="Details" asp-all-route-data="routeData" class="button__custom" >Details</a>
                     </td>
                 </tr>
             }

@@ -14,8 +14,8 @@ namespace swapi_films_rater.Controllers
 {
     public class HomeController : Controller
     {
-        private IFilmsSwapiService _filmsSwapiService { get; set; }
-        private FilmsHelper _filmsService { get; set; }
+        private readonly IFilmsSwapiService _filmsSwapiService;
+        private readonly FilmsHelper _filmsService;
 
         public HomeController(IFilmsSwapiService filmsSwapiService,
             FilmsHelper filmsService)

@@ -27,7 +27,7 @@ namespace swapi_films_rater.Repository.DALServices
 
         public async Task<FilmRateViewModel> Add(FilmRateViewModel filmRate)
         {
-            return _mapper.Map<FilmRateViewModel>(await _filmRatingsDAL.Add(_mapper.Map<FilmRating>(filmRate)));
+            return _mapper.Map<FilmRateViewModel>(await _filmRatingsDAL.Add(_mapper.Map<FilmRate>(filmRate)));
         }
     }
 }
