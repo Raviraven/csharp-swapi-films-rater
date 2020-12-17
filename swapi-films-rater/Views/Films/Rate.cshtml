@@ -1,6 +1,6 @@
 ﻿@model swapi_films_rater.Models.ViewModels.FilmRateViewModel
 
-<section>
+<section class="rate">
     <h3>@Model.MovieName</h3>
 
     @using (Html.BeginForm("Rate", "Films", FormMethod.Post))
@@ -15,19 +15,20 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Rate)
             <div class="">
-                @Html.EditorFor(model => model.Rate)
+                @Html.EditorFor(model => model.Rate, new { htmlAttributes = new { @class = "form-control" } })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Username)
             <div class="">
-                @Html.EditorFor(model => model.Username)
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
             </div>
         </div>
 
         <div>
-            <input type="submit" value="Submit" />
+            @Html.ActionLink("Go back", "Details", "Films", new { Id = Model.UrlId }, new { @class = "rate__button"})
+            <input class="rate__button" type="submit" value="Submit" />
         </div>
     }
 </section>

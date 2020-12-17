@@ -1,15 +1,17 @@
 ﻿@model List<swapi_films_rater.Models.ViewModels.FilmRateViewModel>
 
-<section>
-    <h3>Users ratings</h3>
+<section class="ratings">
+    <h3 class="ratings__header">Users ratings</h3>
 
     <hr />
 
-    @foreach (var rating in Model)
-    {
-        <div>
-            <p> @rating.Username</p>
-            <p> @rating.Rate</p>
-        </div>
-    }
+    <div class="ratings__content">
+        @foreach (var rating in Model)
+        {
+            <div class="ratings__audit">
+                <p class="ratings__audit--rate"> @rating.Rate</p>
+                <p class="ratings__audit--username"> @rating.Username</p>
+            </div>
+        }
+    </div>
 </section>

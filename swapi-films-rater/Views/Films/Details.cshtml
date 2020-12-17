@@ -1,102 +1,120 @@
 ﻿@model swapi_films_rater.Models.ViewModels.FilmDetailsViewModel
 
-<section>
-    <p>@Html.LabelFor(model => model.ApiDetails.Episode_id)</p>
-    <p>@Html.DisplayFor(model => model.ApiDetails.Episode_id)</p>
+<section class="details">
+    <h3 class="details__header">@Model.ApiDetails.Title</h3>
 
-    <p>
-        @Html.LabelFor(model => model.ApiDetails.Title)
-    </p>
-    <p>
-        @Html.DisplayFor(model => model.ApiDetails.Title)
-    </p>
+    <div class="details__content">
+        <p class="details__label">@Html.LabelFor(model => model.ApiDetails.Episode_id)</p>
+        <p>@Html.DisplayFor(model => model.ApiDetails.Episode_id)</p>
 
-    <p>
-        @Html.LabelFor(model => model.ApiDetails.Characters)
-    </p>
-    <p>
-        @Html.
-        @Html.DisplayFor(model => model.ApiDetails.Characters)
-    </p>
+        <p class="details__label">
+            @Html.LabelFor(model => model.ApiDetails.Title)
+        </p>
+        <p>
+            @Html.DisplayFor(model => model.ApiDetails.Title)
+        </p>
 
-    <p>
-        @Html.LabelFor(model => model.ApiDetails.Created, new { @class = "form-control" })
-    </p>
-    <p>
-        @Html.DisplayFor(model => model.ApiDetails.Created)
-    </p>
+        @*<p class="details__label">
+                @Html.LabelFor(model => model.ApiDetails.Characters)
+            </p>
+            <p>
+                @foreach(var item in Model.ApiDetails.Characters)
+                {
+                    @item <br/>
+                }
+            </p>*@
 
-    <p>
-        @Html.LabelFor(model => model.ApiDetails.Director)
-    </p>
-    <p>
-        @Html.DisplayFor(model => model.ApiDetails.Director)
-    </p>
+        <p class="details__label">
+            @Html.LabelFor(model => model.ApiDetails.Created)
+        </p>
+        <p>
+            @Html.DisplayFor(model => model.ApiDetails.Created)
+        </p>
 
-    <p>
-        @Html.LabelFor(model => model.ApiDetails.Edited)
-    </p>
-    <p>
-        @Html.DisplayFor(model => model.ApiDetails.Edited)
-    </p>
+        <p class="details__label">
+            @Html.LabelFor(model => model.ApiDetails.Director)
+        </p>
+        <p>
+            @Html.DisplayFor(model => model.ApiDetails.Director)
+        </p>
 
-    <p>
-        @Html.LabelFor(model => model.ApiDetails.Opening_crawl)
-    </p>
-    <p>
-        @Html.DisplayFor(model => model.ApiDetails.Opening_crawl)
-    </p>
+        <p class="details__label">
+            @Html.LabelFor(model => model.ApiDetails.Edited)
+        </p>
+        <p>
+            @Html.DisplayFor(model => model.ApiDetails.Edited)
+        </p>
 
-    <p>
-        @Html.LabelFor(model => model.ApiDetails.Planets)
-    </p>
-    <p>
-        @Html.DisplayFor(model => model.ApiDetails.Planets)
-    </p>
+        <p class="details__label">
+            @Html.LabelFor(model => model.ApiDetails.Opening_crawl)
+        </p>
+        <p>
+            @Html.DisplayFor(model => model.ApiDetails.Opening_crawl)
+        </p>
 
-    <p>
-        @Html.LabelFor(model => model.ApiDetails.Producer)
-    </p>
-    <p>
-        @Html.DisplayFor(model => model.ApiDetails.Producer)
-    </p>
+        <p class="details__label">
+            @Html.LabelFor(model => model.ApiDetails.Planets)
+        </p>
+        <p>
+            @foreach (var item in Model.ApiDetails.Planets)
+            {
+                @item <br />
+            }
+        </p>
 
-    <p>
-        @Html.LabelFor(model => model.ApiDetails.Release_date)
-    </p>
-    <p>
-        @Html.DisplayFor(model => model.ApiDetails.Release_date)
-    </p>
+        <p class="details__label">
+            @Html.LabelFor(model => model.ApiDetails.Producer)
+        </p>
+        <p>
+            @Html.DisplayFor(model => model.ApiDetails.Producer)
+        </p>
 
-    <p>
-        @Html.LabelFor(model => model.ApiDetails.Species)
-    </p>
-    <p>
-        @Html.DisplayFor(model => model.ApiDetails.Species)
-    </p>
+        <p class="details__label">
+            @Html.LabelFor(model => model.ApiDetails.Release_date)
+        </p>
+        <p>
+            @Html.DisplayFor(model => model.ApiDetails.Release_date)
+        </p>
 
-    <p>
-        @Html.LabelFor(model => model.ApiDetails.Starships)
-    </p>
-    <p>
-        @Html.DisplayFor(model => model.ApiDetails.Starships)
-    </p>
+        @*<p class="details__label">
+                @Html.LabelFor(model => model.ApiDetails.Species)
+            </p>
+            <p>
+                @foreach(var item in Model.ApiDetails.Species)
+                {
+                    @item <br/>
+                }
+            </p>*@
 
-    <p>
-        @Html.LabelFor(model => model.ApiDetails.Url)
-    </p>
-    <p>
-        @Html.DisplayFor(model => model.ApiDetails.Url)
-    </p>
+        <p class="details__label">
+            @Html.LabelFor(model => model.ApiDetails.Starships)
+        </p>
+        <p>
+            @foreach (var item in Model.ApiDetails.Starships)
+            {
+                @item <br />
+            }
+        </p>
 
-    <p>
-        @Html.LabelFor(model => model.ApiDetails.Vehicles)
-    </p>
-    <p>
-        @Html.DisplayFor(model => model.ApiDetails.Vehicles)
-    </p>
+        <p class="details__label">
+            @Html.LabelFor(model => model.ApiDetails.Url)
+        </p>
+        <p>
+            @Html.DisplayFor(model => model.ApiDetails.Url)
+        </p>
 
-    @Html.ActionLink("Rate movie", "Rate", "Films", 
+        @*<p class="details__label">
+                @Html.LabelFor(model => model.ApiDetails.Vehicles)
+            </p>
+            <p>
+                @foreach(var item in Model.ApiDetails.Vehicles)
+                {
+                    @item <br/>
+                }
+            </p>*@
+    </div>
+    @Html.ActionLink("Go back", "Index", "Home")
+    @Html.ActionLink("Rate movie", "Rate", "Films",
         new { urlId = Model.UrlId, episodeId = Model.ApiDetails.Episode_id, Title = Model.ApiDetails.Title })
 </section>
 
