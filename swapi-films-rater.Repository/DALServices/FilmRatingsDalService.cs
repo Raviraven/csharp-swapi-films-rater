@@ -20,11 +20,6 @@ namespace swapi_films_rater.Repository.DALServices
             this._filmRatingsDAL = filmRatingsDAL;
         }
 
-        public Task<FilmRating> Get()
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<List<FilmRateViewModel>> GetByEpisodeId(int episodeId)
         {
             return _mapper.Map<List<FilmRateViewModel>>(await _filmRatingsDAL.GetByEpisodeId(episodeId));

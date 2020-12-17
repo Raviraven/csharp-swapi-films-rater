@@ -42,7 +42,7 @@ namespace swapi_films_rater.Controllers
 
         public IActionResult Rate(int urlId, int episodeId, string title)
         {
-            var model = new FilmRateViewModel { UrlId = urlId, EpisodeId = episodeId, MovieName = title };
+            var model = new FilmRateViewModel { UrlId = urlId, EpisodeId = episodeId, Title = title };
             return View(model);
         }
 

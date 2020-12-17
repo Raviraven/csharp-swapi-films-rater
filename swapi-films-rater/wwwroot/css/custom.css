@@ -72,3 +72,7 @@
 .ratings__content {
     margin: 1rem;
 }
+
+div.validation-summary-errors > ul > li {
+    color:red;
+}

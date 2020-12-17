@@ -10,7 +10,6 @@ namespace swapi_films_rater.Repository.APIServices
     public class FilmsSwapiService : IFilmsSwapiService
     {
         private readonly IHttpClientFactory _httpClientFactory;
-        private string BaseUrl = "https://swapi.dev/api";
 
         public FilmsSwapiService(IHttpClientFactory httpClientFactory)
         {
@@ -47,10 +46,10 @@ namespace swapi_films_rater.Repository.APIServices
         public async Task<Film> Get(int Id)
         {
             string url = $"https://swapi.dev/api/films/{Id}/";
-            return await GetByUrl(url);
+            return await getByUrl(url);
         }
 
-        public async Task<Film> GetByUrl(string url)
+        private async Task<Film> getByUrl(string url)
         {
             try
             {

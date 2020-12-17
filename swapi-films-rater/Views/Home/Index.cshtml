@@ -20,11 +20,14 @@
         <tbody>
             @foreach (var film in Model)
             {
+                var routeData = new Dictionary<string, string>();
+                routeData.Add("Id", film.UrlId.ToString());
+
                 <tr>
                     <td>@film.EpisodeId</td>
                     <td>@film.Title</td>
                     <td>
-                        @Html.ActionLink("Details", "Details", "Films", new { Id = film.UrlId })
+                        <a asp-controller="Films" asp-action="Details" asp-all-route-data="routeData" >Details</a>
                     </td>
                 </tr>
             }

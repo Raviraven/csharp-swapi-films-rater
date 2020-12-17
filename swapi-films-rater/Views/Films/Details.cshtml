@@ -1,5 +1,13 @@
 ﻿@model swapi_films_rater.Models.ViewModels.FilmDetailsViewModel
 
+@{
+    ViewData["Title"] = $"{Model.ApiDetails.Title} Details";
+    Dictionary<string, string> dictionaryRouteData = new Dictionary<string, string>();
+    dictionaryRouteData.Add("urlId", Model.UrlId.ToString());
+    dictionaryRouteData.Add("episodeId", Model.ApiDetails.Episode_id.ToString());
+    dictionaryRouteData.Add("Title", Model.ApiDetails.Title);
+}
+
 <section class="details">
     <h3 class="details__header">@Model.ApiDetails.Title</h3>
 
@@ -113,10 +121,9 @@
                 }
             </p>*@
     </div>
-    @Html.ActionLink("Go back", "Index", "Home")
-    @Html.ActionLink("Rate movie", "Rate", "Films",
-        new { urlId = Model.UrlId, episodeId = Model.ApiDetails.Episode_id, Title = Model.ApiDetails.Title })
+
+    <a asp-area="" asp-controller="Home" asp-action="Index">Go back</a>
+    <a asp-area="" asp-controller="Films" asp-action="Rate" asp-all-route-data="dictionaryRouteData">Rate Movie</a>
 </section>
 
-<partial name="_UserRatings" model="Model.FilmRatings"  />
-@*@Html.Partial("_UserRatings", Model.FilmRatings)*@
+<partial name="_UserRatings" model="Model.FilmRatings" />

@@ -1,34 +1,39 @@
 ﻿@model swapi_films_rater.Models.ViewModels.FilmRateViewModel
 
+@{ 
+    ViewData["Title"] = $"{Model.Title} Rate";
+    Dictionary<string, string> routeDataValues = new Dictionary<string, string>();
+    routeDataValues.Add("Id", Model.UrlId.ToString());
+}
+
 <section class="rate">
-    <h3>@Model.MovieName</h3>
+    <h3>@Model.Title</h3>
 
-    @using (Html.BeginForm("Rate", "Films", FormMethod.Post))
-    {
+    <form asp-controller="Films" asp-action="Rate" method="post">
+        <div asp-validation-summary="All"></div>
 
-        @Html.ValidationSummary(false, "", new { @class = "text-danger"})
+        <input asp-for="UrlId" hidden />
+        <input asp-for="EpisodeId" hidden />
+        <input asp-for="Title" hidden />
 
-        @Html.HiddenFor(model => model.UrlId)
-        @Html.HiddenFor(model => model.EpisodeId)
-        @Html.HiddenFor(model => model.MovieName)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Rate)
+            <label asp-for="Rate"></label>
             <div class="">
-                @Html.EditorFor(model => model.Rate, new { htmlAttributes = new { @class = "form-control" } })
+                <input asp-for="Rate" class="form-control" />
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Username)
+            <label asp-for="Username"></label>
             <div class="">
-                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                <input asp-for="Username" class="form-control" />
             </div>
         </div>
 
         <div>
-            @Html.ActionLink("Go back", "Details", "Films", new { Id = Model.UrlId }, new { @class = "rate__button"})
+            <a class="rate__button" asp-controller="Films" asp-action="Details" asp-all-route-data="routeDataValues">Go back</a>
             <input class="rate__button" type="submit" value="Submit" />
         </div>
-    }
+    </form>
 </section>
