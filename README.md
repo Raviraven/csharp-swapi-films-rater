@@ -2,7 +2,7 @@
 Simple web service for getting the list of Star Wars films and rating them from 0 to 10. 😊
 
 ## Setup
-1. Donwload repository
+1. Download repository
 2. Change DB connection string in **swapi-films-rater/appsettings.json**, default setting is:
     ```json
     "ConnectionStrings": {
@@ -23,7 +23,7 @@ Simple web service for getting the list of Star Wars films and rating them from 
 
 ## Summary
 Simple web service created with .NET Core, MVC and MSSQL.  
-App fetches star wars movies from the api and listed it on main page. User can view a bunch of details about chosen film, and rate it from 0 to 10. Ratings are stored in local DB.  
+App fetches Star Wars movies from the api and listed it on main page. User can view a bunch of details about chosen film, and rate it from 0 to 10. Ratings are stored in local DB.  
 All ratings in the service are listed on film details page.
 
 ## Overview
