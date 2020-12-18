@@ -12,15 +12,11 @@
     <h3 class="details__header">@Model.ApiDetails.Title</h3>
 
     <div class="details__content">
-        <p class="details__label">@Html.LabelFor(model => model.ApiDetails.Episode_id)</p>
-        <p>@Html.DisplayFor(model => model.ApiDetails.Episode_id)</p>
+        <label class="details__label" asp-for="ApiDetails.Episode_id" ></label>
+        <p>@Model.ApiDetails.Episode_id</p>
 
-        <p class="details__label">
-            @Html.LabelFor(model => model.ApiDetails.Title)
-        </p>
-        <p>
-            @Html.DisplayFor(model => model.ApiDetails.Title)
-        </p>
+        <label class="details__label" asp-for="ApiDetails.Title"></label>
+        <p>@Model.ApiDetails.Title</p>
 
         @*<p class="details__label">
                 @Html.LabelFor(model => model.ApiDetails.Characters)
@@ -32,37 +28,19 @@
                 }
             </p>*@
 
-        <p class="details__label">
-            @Html.LabelFor(model => model.ApiDetails.Created)
-        </p>
-        <p>
-            @Html.DisplayFor(model => model.ApiDetails.Created)
-        </p>
+        <label class="details__label" asp-for="ApiDetails.Created"></label>
+        <p>@Model.ApiDetails.Created</p>
 
-        <p class="details__label">
-            @Html.LabelFor(model => model.ApiDetails.Director)
-        </p>
-        <p>
-            @Html.DisplayFor(model => model.ApiDetails.Director)
-        </p>
+        <label class="details__label" asp-for="ApiDetails.Director"></label>
+        <p>@Model.ApiDetails.Director</p>
 
-        <p class="details__label">
-            @Html.LabelFor(model => model.ApiDetails.Edited)
-        </p>
-        <p>
-            @Html.DisplayFor(model => model.ApiDetails.Edited)
-        </p>
+        <label class="details__label" asp-for="ApiDetails.Edited"></label>
+        <p>@Model.ApiDetails.Edited</p>
 
-        <p class="details__label">
-            @Html.LabelFor(model => model.ApiDetails.Opening_crawl)
-        </p>
-        <p>
-            @Html.DisplayFor(model => model.ApiDetails.Opening_crawl)
-        </p>
+        <label class="details__label" asp-for="ApiDetails.Opening_crawl"></label>
+        <p>@Model.ApiDetails.Opening_crawl</p>
 
-        <p class="details__label">
-            @Html.LabelFor(model => model.ApiDetails.Planets)
-        </p>
+        <label class="details__label" asp-for="ApiDetails.Planets"></label>
         <p>
             @foreach (var item in Model.ApiDetails.Planets)
             {
@@ -70,19 +48,11 @@
             }
         </p>
 
-        <p class="details__label">
-            @Html.LabelFor(model => model.ApiDetails.Producer)
-        </p>
-        <p>
-            @Html.DisplayFor(model => model.ApiDetails.Producer)
-        </p>
+        <label class="details__label" asp-for="ApiDetails.Producer"></label>
+        <p>@Model.ApiDetails.Producer</p>
 
-        <p class="details__label">
-            @Html.LabelFor(model => model.ApiDetails.Release_date)
-        </p>
-        <p>
-            @Html.DisplayFor(model => model.ApiDetails.Release_date)
-        </p>
+        <label class="details__label" asp-for="ApiDetails.Release_date"></label>
+        <p>@Model.ApiDetails.Release_date</p>
 
         @*<p class="details__label">
                 @Html.LabelFor(model => model.ApiDetails.Species)
@@ -94,9 +64,7 @@
                 }
             </p>*@
 
-        <p class="details__label">
-            @Html.LabelFor(model => model.ApiDetails.Starships)
-        </p>
+        <label class="details__label" asp-for="ApiDetails.Starships"></label>
         <p>
             @foreach (var item in Model.ApiDetails.Starships)
             {
@@ -104,12 +72,8 @@
             }
         </p>
 
-        <p class="details__label">
-            @Html.LabelFor(model => model.ApiDetails.Url)
-        </p>
-        <p>
-            @Html.DisplayFor(model => model.ApiDetails.Url)
-        </p>
+        <label class="details__label" asp-for="ApiDetails.Url"></label>
+        <p>@Model.ApiDetails.Url</p>
 
         @*<p class="details__label">
                 @Html.LabelFor(model => model.ApiDetails.Vehicles)
